@@ -32,7 +32,7 @@ import { toast } from "@/components/ui/use-toast";
 import { Textarea } from "../ui/textarea";
 import { ScrollArea } from "../ui/scroll-area";
 import { voices } from "@/config/voices";
-import { createPost, createPublicPost } from "@/actions/create-post";
+import { createPrivatePost, createPublicPost } from "@/actions/create-post";
 import { useTranslation } from "react-i18next";
 
 interface NewPostFormProps {
@@ -48,13 +48,13 @@ export function NewPostForm({ className, isPrivate }: NewPostFormProps) {
       required_error: t("form.z_select_voice"),
     }),
     text: z
-    .string()
-    .min(5, {
-      message: t("form.z_minimum_text_size"),
-    })
-    .max(100, {
-      message: t("form.z_maximum_text_size"),
-    }),
+      .string()
+      .min(5, {
+        message: t("form.z_minimum_text_size"),
+      })
+      .max(100, {
+        message: t("form.z_maximum_text_size"),
+      }),
   });
 
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -79,7 +79,7 @@ export function NewPostForm({ className, isPrivate }: NewPostFormProps) {
     });
 
     if (isPrivate) {
-      createPost(data.voice, data.text);
+      createPrivatePost(data.voice, data.text);
     } else {
       createPublicPost(data.voice, data.text);
     }
@@ -118,7 +118,9 @@ export function NewPostForm({ className, isPrivate }: NewPostFormProps) {
                 </PopoverTrigger>
                 <PopoverContent align="start" className="w-full p-0">
                   <Command>
-                    <CommandInput placeholder={t("form.search_voice_placeholder")} />
+                    <CommandInput
+                      placeholder={t("form.search_voice_placeholder")}
+                    />
                     <CommandEmpty>{t("form.no_voice_found")}</CommandEmpty>
                     <CommandGroup>
                       <ScrollArea className="h-[24rem] w-full whitespace-nowrap">
@@ -146,9 +148,7 @@ export function NewPostForm({ className, isPrivate }: NewPostFormProps) {
                   </Command>
                 </PopoverContent>
               </Popover>
-              <FormDescription>
-                {t("form.voice_description")}
-              </FormDescription>
+              <FormDescription>{t("form.voice_description")}</FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -166,14 +166,14 @@ export function NewPostForm({ className, isPrivate }: NewPostFormProps) {
                   {...field}
                 />
               </FormControl>
-              <FormDescription>
-              {t("form.text_description")}
-              </FormDescription>
+              <FormDescription>{t("form.text_description")}</FormDescription>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-fit">{t("form.submit")}</Button>
+        <Button type="submit" className="w-fit">
+          {t("form.submit")}
+        </Button>
       </form>
     </Form>
   );

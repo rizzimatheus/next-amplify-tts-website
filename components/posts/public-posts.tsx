@@ -11,12 +11,12 @@ import { useTranslation } from "react-i18next";
 const client = generateClient<Schema>();
 
 export function PublicPosts({ isSignedIn }: { isSignedIn: boolean }) {
-  const [posts, setPosts] = useState<Array<Schema["PublicPosts"]["type"]>>([]);
+  const [posts, setPosts] = useState<Array<Schema["PublicPost"]["type"]>>([]);
   const { t } = useTranslation();
 
   const authMode = isSignedIn ? "userPool" : "identityPool";
   function listPosts() {
-    client.models.PublicPosts.observeQuery({
+    client.models.PublicPost.observeQuery({
       authMode: authMode,
     }).subscribe({
       next: (data) => setPosts([...data.items]),

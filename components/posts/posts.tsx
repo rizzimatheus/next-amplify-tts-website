@@ -9,11 +9,11 @@ import { NewPostForm } from "./new-post-form";
 
 const client = generateClient<Schema>();
 
-export function Posts() {
-  const [posts, setPosts] = useState<Array<Schema["Post"]["type"]>>([]);
+export function PrivatePosts() {
+  const [posts, setPosts] = useState<Array<Schema["PrivatePost"]["type"]>>([]);
 
   function listPosts() {
-    client.models.Post.observeQuery({
+    client.models.PrivatePost.observeQuery({
       authMode: "userPool",
     }).subscribe({
       next: (data) => setPosts([...data.items]),

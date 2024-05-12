@@ -17,7 +17,7 @@ import { deletePost } from "@/actions/delete-post";
 import { DataTableColumnHeader } from "./data-table-column-header";
 import { useTranslation } from "react-i18next";
 
-export const columns: ColumnDef<Schema["Post"]["type"]>[] = [
+export const columns: ColumnDef<Schema["PrivatePost"]["type"]>[] = [
   {
     id: "select",
     header: ({ table }) => (

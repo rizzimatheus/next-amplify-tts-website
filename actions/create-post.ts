@@ -10,10 +10,10 @@ import outputs from "@/amplify_outputs.json";
 Amplify.configure(outputs);
 const client = generateClient<Schema>();
 
-export const createPost = async (voice: string, text: string) => {
+export const createPrivatePost = async (voice: string, text: string) => {
   if (!voice || !text) return;
 
-  const { data, errors } = await cookieBasedClient.models.Post.create(
+  const { data, errors } = await cookieBasedClient.models.PrivatePost.create(
     {
       id: uuid(),
       voice: voice,
@@ -30,7 +30,7 @@ export const createPost = async (voice: string, text: string) => {
 export const createPublicPost = async (voice: string, text: string) => {
   if (!voice || !text) return;
 
-  const { data, errors } = await client.models.PublicPosts.create(
+  const { data, errors } = await client.models.PublicPost.create(
     {
       id: uuid(),
       voice: voice,

@@ -24,8 +24,8 @@ export function DataTableDeleteRows<TData>({
       disabled={!table.getSelectedRowModel().rows.length}
       onClick={() => {
         table.getSelectedRowModel().rows.forEach((row) => {
-          deletePost((row.original as Schema["Post"]["type"]).id);
-          row.toggleSelected(false)
+          deletePost((row.original as Schema["PrivatePost"]["type"]).id);
+          row.toggleSelected(false);
         });
       }}
     >
@@ -50,7 +50,7 @@ export function DataPublicTableDeleteRows<TData>({
           variant: "destructive",
           title: t("table.delete_toast_title"),
           description: t("table.delete_toast_description"),
-        })
+        });
       }}
     >
       <Trash2 className="sm:mr-2 h-4 w-4" />
