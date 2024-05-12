@@ -1,0 +1,11 @@
+{
+    "header": {
+        "about": "Sobre",
+        "my_notes": "Minhas Anotações",
+        "sign_in": "Entrar",
+        "sign_out": "Sair"
+    },
+    "footer": {
+        "contact_me": "Entre em Contato"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "header": {
+        "about": "About",
+        "my_notes": "My Notes",
+        "sign_in": "Sign In",
+        "sign_out": "Sign Out"
+    },
+    "footer": {
+        "contact_me": "Contact Me"
+    }
+}

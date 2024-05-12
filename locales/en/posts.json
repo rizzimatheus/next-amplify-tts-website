@@ -1,0 +1,44 @@
+{
+    "introduction": {
+        "public_title": "Public Notes",
+        "private_title": "Notes from ",
+        "description": "Select a voice, write your note and submit!"
+    },
+    "form": {
+        "voice_label": "Voice",
+        "voice_placeholder": "Select a voice",
+        "search_voice_placeholder": "Search voice...",
+        "voice_description": "This is the voice that will be used in the audio.",
+        "no_voice_found": "No voice found.",
+        "text_label": "Text",
+        "text_placeholder": "Write your note",
+        "text_description": "This is the text that will be read by the voice.",
+        "submit": "Submit",
+        "toast_title": "You created a new note with the following values:",
+        "z_select_voice": "Please select a voice.",
+        "z_minimum_text_size": "Text must be at least 5 characters.",
+        "z_maximum_text_size": "Text must not be longer than 100 characters."
+    },
+    "table": {
+        "filter_placeholder": "Filter notes...",
+        "delete_button": "Delete Selected Rows",
+        "view": "View",
+        "toggle_columns": "Toggle columns",
+        "no_results": "No results.",
+
+        "date": "Date",
+        "date_format": "en-US",
+        "voice": "Voice",
+        "text": "Text",
+        "status": "Status",
+        "audio": "Audio",
+        "of": "of",
+        "rows_selected": "row(s) selected.",
+        "rows_per_page": "Rows per page",
+        "page": "Page",
+
+        "delete_toast_title": "Something went wrong.",
+        "delete_toast_description": "You can't delete public notes.",
+        "hide": "Hide"
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "introduction": {
+        "public_title": "Notas Públicas",
+        "private_title": "Notas de ",
+        "description": "Selecione uma voz, escreva sua nota e envie!"
+    },
+    "form": {
+        "voice_label": "Voz",
+        "voice_placeholder": "Selecione uma voz",
+        "search_voice_placeholder": "Buscar voz...",
+        "voice_description": "Essa é a voz que será usada no áudio.",
+        "no_voice_found": "Nenhuma voz encontrada.",
+        "text_label": "Texto",
+        "text_placeholder": "Escreva sua nota",
+        "text_description": "Esse é o texto que será lido pela voz.",
+        "submit": "Enviar",
+        "toast_title": "Você criou uma nova nota com os seguintes valores:",
+        "z_select_voice": "Por favor, selecione uma voz.",
+        "z_minimum_text_size": "O texto deve ter pelo menos 5 caracteres.",
+        "z_maximum_text_size": "O texto não deve ter mais de 100 caracteres."
+    },
+    "table": {
+        "filter_placeholder": "Filtrar notas...",
+        "delete_button": "Excluir Linhas Selecionadas",
+        "view": "Visualizar",
+        "toggle_columns": "Alternar colunas",
+        "no_results": "Nenhum resultado.",
+
+        "date": "Data",
+        "date_format": "pt-BR",
+        "voice": "Voz",
+        "text": "Texto",
+        "status": "Status",
+        "audio": "Áudio",
+        "of": "de",
+        "rows_selected": "linha(s) selecionada(s).",
+        "rows_per_page": "Linhas por página",
+        "page": "Página",
+
+        "delete_toast_title": "Algo deu errado.",
+        "delete_toast_description": "Você não pode excluir notas públicas.",
+        "hide": "Ocultar"
+    }
+}
