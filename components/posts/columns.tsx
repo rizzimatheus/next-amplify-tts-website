@@ -16,6 +16,7 @@ import {
 import { deletePost } from "@/actions/delete-post";
 import { DataTableColumnHeader } from "./data-table-column-header";
 import { useTranslation } from "react-i18next";
+import { DataTableDate } from "./data-table-date";
 
 export const columns: ColumnDef<Schema["PrivatePost"]["type"]>[] = [
   {
@@ -46,23 +47,10 @@ export const columns: ColumnDef<Schema["PrivatePost"]["type"]>[] = [
       <DataTableColumnHeader column={column} title="table.date" />
     ),
     cell: ({ row }) => {
-      const { t } = useTranslation();
       const date = new Date(row.original.createdAt);
-      const options: Intl.DateTimeFormatOptions = {
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit",
-      };
       return (
-        <div className="flex flex-col">
-          {/* pt-BR or en-US */}
-          <span>
-            {date.toLocaleDateString(t("table.date_format"), options)}
-          </span>
-        </div>
-      );
+        <DataTableDate date={date} />
+      )
     },
   },
   // {
