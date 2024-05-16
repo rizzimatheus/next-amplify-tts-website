@@ -5,6 +5,7 @@ export const siteConfig = {
   author: "Matheus Rizzi",
   email: "info@matheusrizzi.com",
   links: {
+    about: "https://www.matheusrizzi.com/en/projects/en/audionotes",
     github: "https://github.com/rizzimatheus",
     linkedin: "https://www.linkedin.com/in/matheus-rizzi/",
     whatsapp: "https://wa.me/message/W2JWR3QEG4JWK1",

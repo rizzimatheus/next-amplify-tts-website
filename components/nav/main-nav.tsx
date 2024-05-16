@@ -6,10 +6,10 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
-import { useAuthenticator } from "@aws-amplify/ui-react";
 
 import { Hub } from "aws-amplify/utils";
 import { useEffect, useState } from "react";
+import { aboutPage } from "@/utils/about";
 
 export function MainNav({ isSignedIn }: { isSignedIn: boolean }) {
   const { t } = useTranslation();
@@ -43,7 +43,7 @@ export function MainNav({ isSignedIn }: { isSignedIn: boolean }) {
 
       <div className="flex flex-row justify-start flex-1 space-x-4 lg:space-x-6">
         <Link
-          href="/about"
+          href={aboutPage()}
           className={cn(
             "text-sm font-medium transition-colors hover:text-primary hidden md:inline-block",
             pathname === "/about" ? "text-foreground" : "text-foreground/60"

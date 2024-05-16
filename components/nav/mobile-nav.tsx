@@ -10,10 +10,12 @@ import { Icons } from "../icons";
 import { siteConfig } from "@/config/site";
 import { useTranslation } from "react-i18next";
 import { SignInSignOut } from "./signin-signout";
+import { aboutPage } from "@/utils/about";
 
-export function MobileNav() {
+export function MobileNav({ isSignedIn }: { isSignedIn: boolean }) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
+  const [authCheck, setAuthCheck] = useState(isSignedIn);
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -33,12 +35,14 @@ export function MobileNav() {
           <span className="font-bold">{siteConfig.name}</span>
         </MobileLink>
         <div className="flex flex-col gap-3 mt-3">
-          <MobileLink onOpenChange={setOpen} href="/#about">
+          <MobileLink onOpenChange={setOpen} href={aboutPage()}>
             {t("header.about")}
           </MobileLink>
-          <MobileLink onOpenChange={setOpen} href="/#experience">
-            {t("header.notes")}
+          {authCheck && (
+          <MobileLink onOpenChange={setOpen} href="/notes">
+            {t("header.my_notes")}
           </MobileLink>
+          )}
           <SignInSignOut className="mt-8" onOpenChange={setOpen}/>
         </div>
       </SheetContent>
